@@ -1,4 +1,11 @@
-// Write your styles here
+@mixin backgroundWord($word, $headingColor, $selectColor) {
+  content: $word;
+  position: absolute;
+  z-index: 1;
+  color: $headingColor;
+  background: $selectColor;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -47,8 +54,16 @@ body {
         margin-top: 35px;
         width: 440px;
         line-height: 55px;
-        &::selection {
-          background: $selectColor;
+        display: relative;
+        font-weight: 600;
+
+        &::after {
+          @include backgroundWord("awesome", $headingColor, $selectColor);
+          line-height: 50px;
+          left: 143px;
+          top: 161px;
+          line-height: 25px;
+          padding: 0 0 15px 0;
         }
       }
       .header_text {
@@ -86,10 +101,13 @@ body {
       font-size: 30px;
       font-family: "Source Sans Pro", sans-serif;
       font-weight: bold;
-
       margin: 25px;
-      &::selection {
-        background: $selectColor;
+      &::after {
+        @include backgroundWord("adventure", $headingColor, $selectColor);
+        font-size: 30px;
+        left: 505px;
+        line-height: 30px;
+        padding-top: 4px;
       }
     }
     .section_card_wrap {
@@ -148,15 +166,18 @@ body {
           font-weight: bold;
           font-family: "Source Sans Pro", sans-serif;
           color: $headingColor;
-
-          &::selection {
-            background: $selectColor;
+          &::after {
+            @include backgroundWord("start", $headingColor, $selectColor);
+            font-size: 1em;
+            left: 258px;
+            top: 32px;
+            line-height: 25px;
+            padding-top: 5px;
           }
         }
         .section_banner_text {
           font-size: 0.8em;
           color: lightgrey;
-
           font-family: "Fresca", sans-serif;
         }
       }
@@ -219,4 +240,3 @@ body {
     }
   }
 }
-// Write your styles here

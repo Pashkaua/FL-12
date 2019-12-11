@@ -40,9 +40,20 @@ body {
         font-size: 54px;
         margin-top: 35px;
         width: 440px;
-        line-height: 55px; }
-        body .header .header-wrap .header_heading::selection {
-          background: #14a0c7; }
+        line-height: 55px;
+        display: relative;
+        font-weight: 600; }
+        body .header .header-wrap .header_heading::after {
+          content: "awesome";
+          position: absolute;
+          z-index: 1;
+          color: #21232e;
+          background: #14a0c7;
+          line-height: 50px;
+          left: 143px;
+          top: 161px;
+          line-height: 25px;
+          padding: 0 0 15px 0; }
       body .header .header-wrap .header_text {
         width: 400px;
         color: #21232e;
@@ -72,8 +83,16 @@ body {
       font-family: "Source Sans Pro", sans-serif;
       font-weight: bold;
       margin: 25px; }
-      body .section .section_text::selection {
-        background: #14a0c7; }
+      body .section .section_text::after {
+        content: "adventure";
+        position: absolute;
+        z-index: 1;
+        color: #21232e;
+        background: #14a0c7;
+        font-size: 30px;
+        left: 505px;
+        line-height: 30px;
+        padding-top: 4px; }
     body .section .section_card_wrap {
       padding: 0 70px;
       margin-bottom: 200px; }
@@ -119,8 +138,17 @@ body {
           font-weight: bold;
           font-family: "Source Sans Pro", sans-serif;
           color: #21232e; }
-          body .section .section_banner .section_banner_text_wrap .section_banner_heading::selection {
-            background: #14a0c7; }
+          body .section .section_banner .section_banner_text_wrap .section_banner_heading::after {
+            content: "start";
+            position: absolute;
+            z-index: 1;
+            color: #21232e;
+            background: #14a0c7;
+            font-size: 1em;
+            left: 258px;
+            top: 32px;
+            line-height: 25px;
+            padding-top: 5px; }
         body .section .section_banner .section_banner_text_wrap .section_banner_text {
           font-size: 0.8em;
           color: lightgrey;
