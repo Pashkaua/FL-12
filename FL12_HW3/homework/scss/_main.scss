@@ -1,0 +1,222 @@
+// Write your styles here
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: $bgMainColor;
+  .header {
+    height: 530px;
+    background: $bgHeaderNight;
+    background-size: cover;
+    background-position: floor($number: 0);
+    font-family: "Fresca", sans-serif;
+    border-radius: 0 0 40% 0;
+    .header-wrap {
+      width: 80%;
+      margin: 0 auto;
+      .landing-logo {
+        display: flex;
+        padding-top: 15px;
+        width: 120px;
+        img {
+          height: 40px;
+        }
+        p {
+          color: $headingColor;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin: 7px 10px;
+          font-size: 18px;
+          line-height: 13px;
+          span {
+            text-transform: lowercase;
+            font-size: 8px;
+            margin-left: 3px;
+          }
+          ::before {
+            content: " ";
+          }
+        }
+      }
+      .header_heading {
+        font-family: "Source Sans Pro", sans-serif;
+        color: $headingColor;
+        font-size: 54px;
+        margin-top: 35px;
+        width: 440px;
+        line-height: 55px;
+        &::selection {
+          background: $selectColor;
+        }
+      }
+      .header_text {
+        width: 400px;
+        color: $headingColor;
+        margin-top: 50px;
+        font-size: 12px;
+        word-spacing: 0.6px;
+      }
+      div {
+        .header_button {
+          margin-top: 60px;
+          background-color: $buttonColor;
+          border-radius: 4px;
+          border: none;
+          width: 100px;
+          height: 35px;
+          color: #fff;
+          font-family: "Source Sans Pro", sans-serif;
+        }
+        .login {
+          color: #fff;
+          margin-left: 100px;
+        }
+      }
+    }
+  }
+  .section {
+    width: 70%;
+    margin: 0 auto 100px;
+    position: relative;
+    .section_text {
+      color: $headingColor;
+      text-align: center;
+      font-size: 30px;
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: bold;
+
+      margin: 25px;
+      &::selection {
+        background: $selectColor;
+      }
+    }
+    .section_card_wrap {
+      padding: 0 70px;
+      margin-bottom: 200px;
+      .section_card {
+        background-color: $bgSectionColor;
+        margin-top: 20px;
+        border-radius: 5px;
+        padding: 15px;
+        display: flex;
+
+        .section_card_img {
+          border-radius: 5px;
+          width: 100%;
+        }
+        .section_card_right_container {
+          text-align: center;
+          color: #fff;
+
+          .section_card_heading {
+            margin: 35px auto;
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 1.1em;
+          }
+          .section_card_text {
+            text-align: justify;
+            margin: 0 68px 18px 68px;
+            color: lightgrey;
+            font-size: 0.8em;
+            line-height: 1.5em;
+          }
+          .section_link {
+            color: lightgrey;
+            font-size: 0.8em;
+            font-family: "Source Sans Pro", sans-serif;
+          }
+        }
+      }
+    }
+    .section_banner {
+      position: absolute;
+      width: 100%;
+      bottom: -275px;
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 160px;
+      background: linear-gradient(90deg, $buttonColor, $bgBannerColor);
+
+      border-radius: 5px;
+      .section_banner_text_wrap {
+        line-height: 40px;
+
+        .section_banner_heading {
+          font-size: 1.5em;
+          font-weight: bold;
+          font-family: "Source Sans Pro", sans-serif;
+          color: $headingColor;
+
+          &::selection {
+            background: $selectColor;
+          }
+        }
+        .section_banner_text {
+          font-size: 0.8em;
+          color: lightgrey;
+
+          font-family: "Fresca", sans-serif;
+        }
+      }
+      .section_banner_button {
+        width: 100px;
+        height: 35px;
+        border-radius: 3px;
+        border: none;
+        color: white;
+        background: $buttonColor;
+        margin: auto 0;
+      }
+    }
+  }
+  .footer {
+    background-color: $bgSectionColor;
+    padding: 110px 0 40px 0;
+    .footer-wrap {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      color: lightgrey;
+      .footer_logo {
+        width: 33%;
+        display: flex;
+        padding-top: 15px;
+        img {
+          height: 40px;
+        }
+        p {
+          color: lightgrey;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin: 7px 10px;
+          font-size: 18px;
+          line-height: 13px;
+          width: 80px;
+          span {
+            text-transform: lowercase;
+            font-size: 8px;
+            margin-left: 3px;
+          }
+          ::before {
+            content: " ";
+          }
+        }
+      }
+      .footer_text {
+        width: 33%;
+        padding: 15px 70px;
+        font-size: 0.8em;
+        color: lightgrey;
+      }
+      .footer-cr {
+        width: 33%;
+        text-align: right;
+        font-size: 0.8em;
+        padding: 30px 0;
+      }
+    }
+  }
+}
+// Write your styles here
