@@ -10,6 +10,9 @@ body header {
   width: 100%;
   align-items: center;
   height: 10vh;
+  position: fixed;
+  top: 0;
+  background: #ffffff;
 }
 body header #top-text {
   width: 50%;
@@ -37,13 +40,14 @@ body header nav ul li a {
   font-size: 0.8em;
   letter-spacing: 1px;
 }
-body header nav ul li a:visited {
+body header nav ul li a:hover {
   color: #bfbb6b;
 }
 body main {
   width: 100%;
 }
 body main .main-banner {
+  margin-top: 10vh;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(../img/home-bg.jpg);
   background-repeat: no-repeat;
