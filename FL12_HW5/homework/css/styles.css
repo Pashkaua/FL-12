@@ -1,0 +1,262 @@
+/*
+ * Feel free to change name of colors if you need it
+ * Feel free to add new colors if you need it
+ */
+
+:root {
+  --bg-color--dark: #0b192f;
+  --bg-color--header: #024161;
+  --link: #fff;
+  --link--hover: #1f52a4;
+  --bg-footer-color: #024161;
+}
+
+body {
+  font-family: roboto;
+  background-color: var(--bg-color--dark);
+}
+
+.post-1 {
+  background: #9d27b0;
+}
+
+.post-2 {
+  background: #9bb800;
+}
+
+.post-3 {
+  background: #ed5120;
+}
+
+.post-4 {
+  background: #9d27b0;
+}
+
+.post-5 {
+  background: #2d95bb;
+}
+
+/* Your styles go here */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 640px;
+  margin: 0 auto;
+
+}
+
+header {
+  background-color: var(--bg-color--header);
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h2 {
+  color: #fff;
+  font-size: 1em;
+  font-weight: lighter;
+  margin-left: 15px;
+}
+
+header h2 span {
+  color: #d12767;
+}
+
+header ul {
+  display: flex;
+  margin-right: 15px;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.5em;
+  line-height: 50px;
+  margin: 0 12px;
+}
+
+header ul li:hover {
+  height: 50px;
+  background-color: #1f52a4;
+}
+
+
+.main-banner {
+  height: 200px;
+  margin: 10px auto;
+  background-image: url(../img/post0.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 115px 0 0 25px;
+}
+
+.main-heading {
+  font-size: 1.5em;
+  font-weight: lighter;
+  color: #fff;
+}
+
+.main-text {
+  width: 65%;
+  font-size: 0.5em;
+  color: #9da9ab;
+  margin-top: 5px;
+  line-height: 15px;
+}
+
+.main-block {
+  display: flex;
+}
+
+.main-content {
+  width: 480px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.item-post {
+  display: flex;
+  height: 160px;
+
+}
+
+.item-post:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: end;
+
+}
+
+.item-post:nth-child(even) .date {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.item-post img {
+  width: 238px;
+}
+
+.item-post img:hover {
+  opacity: 0.5;
+}
+
+.post-text {
+  padding: 20px;
+  color: var(--link);
+  position: relative;
+}
+
+.post-text:hover {
+  opacity: 0.5;
+}
+
+.date {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  filter: opacity(0.3);
+  text-align: center;
+}
+
+
+.day {
+  font-size: 1.5em;
+}
+
+.month {
+  font-size: 0.8em;
+}
+
+.item-heading {
+  font-size: 1.6em;
+  line-height: 25px;
+  font-weight: lighter;
+}
+
+.item-text {
+  font-size: 0.45em;
+  line-height: 14px;
+  margin-top: 10px;
+}
+
+.side-block {
+  width: 150px;
+  margin-left: 10px;
+}
+
+.side-post {
+  height: 260px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.side-post img {
+  width: 150px;
+}
+
+.side-post h2 {
+  margin: 20px 20px 3px 20px;
+  font-size: 0.9em;
+}
+
+.side-post p {
+  margin: 0 20px;
+  font-size: 0.5em;
+  line-height: 12px;
+}
+
+.bottom-post {
+  background-color: #2d95bb;
+  height: 100px;
+  color: var(--link);
+  position: relative;
+}
+
+.bottom-post .bottom-heading {
+  font-size: 1.6em;
+  font-weight: lighter;
+  margin: 23px 0 5px 23px;
+}
+
+.bottom-post .bottom-text {
+  font-size: 0.45em;
+  margin: 0 23px;
+  line-height: 15px;
+  filter: opacity(0.5);
+}
+
+footer {
+  height: 50px;
+  margin-top: 10px;
+  background-color: var(--bg-footer-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.footer-left {
+  color: #63768d;
+  font-size: 0.45em;
+  line-height: 12px;
+}
+
+.footer-right {
+  color: #63768d;
+  width: 65px;
+  font-size: 0.45em;
+  line-height: 12px;
+
+}
