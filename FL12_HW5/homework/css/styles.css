@@ -1,19 +1,6 @@
-/*
- * Feel free to change name of colors if you need it
- * Feel free to add new colors if you need it
- */
-
-:root {
-  --bg-color--dark: #0b192f;
-  --bg-color--header: #024161;
-  --link: #fff;
-  --link--hover: #1f52a4;
-  --bg-footer-color: #024161;
-}
-
 body {
   font-family: roboto;
-  background-color: var(--bg-color--dark);
+  background-color: #0b192f;
 }
 
 .post-1 {
@@ -49,8 +36,12 @@ body {
 
 }
 
+#menu-burger {
+  display: none;
+}
+
 header {
-  background-color: var(--bg-color--header);
+  background-color: #024161;
   height: 50px;
   margin: 0 auto;
   display: flex;
@@ -76,6 +67,7 @@ header ul {
 
 header ul li {
   list-style: none;
+  cursor: pointer;
 }
 
 header ul li a {
@@ -99,7 +91,7 @@ header ul li:hover {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 115px 0 0 25px;
+  padding: 110px 0 0 25px;
 }
 
 .main-heading {
@@ -109,7 +101,7 @@ header ul li:hover {
 }
 
 .main-text {
-  width: 65%;
+  width: 67%;
   font-size: 0.5em;
   color: #9da9ab;
   margin-top: 5px;
@@ -150,16 +142,18 @@ header ul li:hover {
 
 .item-post img:hover {
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .post-text {
   padding: 20px;
-  color: var(--link);
+  color: #fff;
   position: relative;
 }
 
 .post-text:hover {
   opacity: 0.5;
+  cursor: pointer;
 }
 
 .date {
@@ -221,7 +215,7 @@ header ul li:hover {
 .bottom-post {
   background-color: #2d95bb;
   height: 100px;
-  color: var(--link);
+  color: #fff;
   position: relative;
 }
 
@@ -241,7 +235,7 @@ header ul li:hover {
 footer {
   height: 50px;
   margin-top: 10px;
-  background-color: var(--bg-footer-color);
+  background-color: #024161;
   display: flex;
   justify-content: space-between;
   padding: 16px;
@@ -259,4 +253,217 @@ footer {
   font-size: 0.45em;
   line-height: 12px;
 
+}
+
+@media (max-width: 768px) {
+  body .wrapper {
+    width: 95%;
+    margin: 0 auto;
+
+  }
+
+  nav {
+    display: none;
+  }
+
+  header {
+    height: 180px;
+    flex-direction: column;
+    justify-content: inherit;
+  }
+
+  #menu-burger {
+    display: block;
+    margin-top: 25px;
+  }
+
+  #menu-burger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin-bottom: 3px;
+
+    background: #cdcdcd;
+    border-radius: 1px;
+  }
+
+  header h2 {
+    margin: 60px 0;
+    font-size: 1.8em;
+  }
+
+  .main-banner {
+    height: 300px;
+  }
+
+  .main-banner .main-heading {
+    font-size: 2.2em;
+    padding-top: 65px;
+  }
+
+  .main-content {
+    width: 65%;
+  }
+
+  .main-text {
+    width: 90%;
+    font-size: 0.6em;
+    color: #9da9ab;
+    margin-top: 10px;
+    line-height: 15px;
+  }
+
+  .item-post {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .item-post img {
+    width: 100%;
+  }
+
+
+  .item-post:nth-child(even) {
+    text-align: start;
+  }
+
+  .post-text {
+    padding: 20px 0;
+  }
+
+
+  .item-post:nth-child(even) .date {
+    position: absolute;
+    top: 30px;
+    left: inherit;
+    right: 12%;
+
+  }
+
+  .item-post .date {
+    position: absolute;
+    top: 30px;
+    right: 12%;
+  }
+
+
+
+  .date .day {
+    font-size: 2em;
+  }
+
+  .item-heading {
+    margin: 20px 30px;
+    font-size: 2.3em;
+    line-height: 35px;
+    width: 70%;
+  }
+
+  .item-text {
+    margin: 0 30px 20px 30px;
+    font-size: 0.6em;
+    line-height: 15px;
+  }
+
+  .bottom-post {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .bottom-post .date {
+    position: absolute;
+    top: 75%;
+    left: 40%;
+    width: 20%;
+  }
+
+  .bottom-post .date .day {
+    font-size: 3em;
+  }
+
+  .bottom-post .bottom-heading {
+    font-size: 2.3em;
+    margin: 30px 30px 20px 30px;
+
+  }
+
+  .bottom-post .bottom-text {
+    font-size: 0.8em;
+    line-height: 15px;
+    margin: 0 30px 100px 30px;
+  }
+
+  .side-block {
+    width: 35%;
+  }
+
+  .side-post {
+    height: auto;
+  }
+
+  .side-post img {
+    width: 100%;
+  }
+
+  .side-post h2 {
+    margin: 20px 25px 3px 25px;
+    font-size: 1.3em;
+    color: #777;
+  }
+
+  .side-post p {
+    margin: 10px 25px;
+    font-size: 0.8em;
+    line-height: 15px;
+    color: lightgrey;
+    padding-bottom: 25px
+  }
+
+  footer {
+    display: block;
+    height: 120px;
+    text-align: center;
+
+  }
+
+  footer .footer-right {
+    margin: 0 auto;
+  }
+
+  .footer-left,
+  .footer-right {
+    margin-top: 25px;
+    width: auto;
+    font-size: 0.7em;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  body .wrapper {
+    width: 100%;
+  }
+
+  .main-block {
+    display: block;
+  }
+
+  .side-block {
+    width: 100%;
+    margin: 0;
+  }
+
+  .side-post {
+    height: auto;
+  }
+
+  .side-text {
+    padding-bottom: 25px;
+  }
+
+  .main-content {
+    width: 100%;
+  }
 }
