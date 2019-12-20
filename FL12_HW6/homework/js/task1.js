@@ -2,11 +2,14 @@ let a = parseInt(prompt('Pleace enter the first number', ''));
 let b = parseInt(prompt('Pleace enter the second number', ''));
 let c = parseInt(prompt('Pleace enter the third number', ''));
 
-let discr = b * b - (4 * a * c);
+let num2 = 2;
+let num4 = 4;
+
+let discr = b * b - num4 * a * c;
 let sqrtDiscr = Math.sqrt(discr);
 
-let x1 = (-b + sqrtDiscr) / 2 * a;
-let x2 = (-b - sqrtDiscr) / 2 * a;
+let x1 = (-b + sqrtDiscr) / num2 * a;
+let x2 = (-b - sqrtDiscr) / num2 * a;
 
 if (isNaN(a) || isNaN(b) || isNaN(c)) {
     console.log('Invalid input data');
