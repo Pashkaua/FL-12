@@ -14,9 +14,8 @@ if (!email) {
 
     if (!password) {
         alert('Canceled.');
-    } else if (email === 'user@gmail.com' && password !== 'UserPass') {
-        alert('Wrong password');
-    } else if (email === 'admin@gmail.com' && password !== 'AdminPass') {
+    } else if (email === 'user@gmail.com' && password !== 'UserPass' ||
+        email === 'admin@gmail.com' && password !== 'AdminPass') {
         alert('Wrong password');
     } else {
         const change = confirm('Do you want to change your password');
@@ -26,7 +25,8 @@ if (!email) {
         } else {
             const oldPassword = prompt('Pleace enter your old password', '');
 
-            if (email === 'user@gmail.com' && oldPassword === 'UserPass') {
+            if (email === 'user@gmail.com' && oldPassword === 'UserPass' ||
+                email === 'admin@gmail.com' && oldPassword === 'AdminPass') {
                 const changePassword = prompt('Pleace enter your new password', '');
                 if (!changePassword) {
                     alert('Canceled.');
@@ -34,20 +34,6 @@ if (!email) {
                     alert('It’s too short password. Sorry.');
                 } else {
                     const changePasswordSecond = prompt('Pleace repeat your new password', '');
-                    if (changePasswordSecond === changePassword) {
-                        alert('have successfully changed your password');
-                    } else {
-                        alert('You wrote the wrong password.');
-                    }
-                }
-            } else if (email === 'admin@gmail.com' && oldPassword === 'AdminPass') {
-                const changePassword = prompt('Pleace enter your new password', '');
-                if (!changePassword) {
-                    alert('Canceled.');
-                } else if (changePassword.length < six) {
-                    alert('It’s too short password. Sorry.');
-                } else {
-                    const changePasswordSecond = prompt('Pleace reapet your new password', '');
                     if (changePasswordSecond === changePassword) {
                         alert('have successfully changed your password');
                     } else {
@@ -62,4 +48,3 @@ if (!email) {
 } else {
     alert('I don’t know you.');
 }
-
