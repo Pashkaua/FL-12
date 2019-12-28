@@ -21,7 +21,7 @@ function countNumbers(arr) {
         }
         finRes[res[i]] = num2;
     }
-    return finRes;
+    return JSON.stringify(finRes);
 }
 
 console.log(countNumbers('erer384jj4444666888jfd123'));
