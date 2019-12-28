@@ -19,9 +19,10 @@ function countNumbers(arr) {
                 num2++;
             }
         }
-        finRes[res[i]] = num2;
+        finRes[`'${res[i]}'`] = num2;
+
     }
-    return JSON.stringify(finRes);
+    return finRes;
 }
 
 console.log(countNumbers('erer384jj4444666888jfd123'));
