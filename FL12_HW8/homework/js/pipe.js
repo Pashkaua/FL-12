@@ -10,5 +10,5 @@ function pipe(num, ...callback) {
     return res;
 }
 
-console.log(pipe(1, addOne)); //=> 2
-console.log(pipe(1, addOne, addOne)); //=> 3
+pipe(1, addOne);
+pipe(1, addOne, addOne);
