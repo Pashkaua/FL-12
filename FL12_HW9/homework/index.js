@@ -95,3 +95,16 @@ function substitute(arr) {
         }
     });
 }
+
+
+//Task 9 get  past day
+
+function getPastDay(date, day) {
+
+    let new_date = new Date(date);
+    let res = new Date(new_date.setDate(new_date.getDate() - day));
+    const options = { day: 'numeric', month: 'short', year: 'numeric' };
+
+    return res.toLocaleString('en-GB', options);
+
+}
