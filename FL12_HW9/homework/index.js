@@ -102,9 +102,22 @@ function substitute(arr) {
 function getPastDay(date, day) {
 
     let new_date = new Date(date);
+
     let res = new Date(new_date.setDate(new_date.getDate() - day));
+
     const options = { day: 'numeric', month: 'short', year: 'numeric' };
 
     return res.toLocaleString('en-GB', options);
+}
 
+
+//Task 10 format Date
+
+function formatDate(date) {
+    let options = {
+        year: 'numeric', month: 'numeric', day: '2-digit',
+        hour: 'numeric', minute: 'numeric', hour12: false
+    };
+
+    return date.toLocaleString('zh-CN', options);
 }
