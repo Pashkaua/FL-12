@@ -1,5 +1,4 @@
 
-
 class Fighter {
     constructor(obj) {
         let health = obj.hp;
@@ -10,14 +9,14 @@ class Fighter {
         this.getAgility = () => obj.agility;
         this.getHealth = () => health;
 
-        this.wins = 0;
-        this.loses = 0;
+        let wins = 0;
+        let loses = 0;
 
 
-        this.logCombatHistory = () => console.log(`Name: ${this.getName()}, Wins: ${this.wins}, Losses: ${this.loses}`);
+        this.logCombatHistory = () => console.log(`Name: ${this.getName()}, Wins: ${wins}, Losses: ${loses}`);
 
-        this.heal = (hpPoint) => {
-            health += hpPoint;
+        this.heal = (hpPoints) => {
+            health += hpPoints;
         };
 
         this.dealDamage = (damPoints) => {
@@ -27,39 +26,63 @@ class Fighter {
             }
         }
 
-        this.addWin = () => this.wins + 1;
+        this.addWin = () => wins++;
 
-        this.addLoss = () => this.loses - 1;
-
+        this.addLoss = () => loses--;
 
         this.attack = (defender) => {
 
-            let max = 100;
-
-            let defenderHp = defender.getHealth();
+            const max = 100;
+            let rand = Math.floor(Math.random() * max);
 
             let attackResult = max - (defender.getStrength() + defender.getAgility());
 
-            let rand = Math.floor(Math.random() * max);
-
-
             if (rand > attackResult) {
-                defenderHp - this.getDamage();
-                console.log(`${this.getName()} makes ${this.getDamage()} damage to ${defender.getName()}`);
+                defender.dealDamage(this.getDamage());
 
+                console.log(`${this.getName()} makes ${this.getDamage()} damage to ${defender.getName()}`);
             } else {
-                console.log('Commodus attack missed');
+                console.log(`${this.getName()} attack missed`);
             }
         }
     }
 }
 
 
-const myFighter = new Fighter({ name: 'Maximus', damage: 25, hp: 100, strength: 30, agility: 25 });
+function battle(fighter1, fighter2) {
+
+    if (fighter1.getHealth() === 0) {
+        console.log(`${fighter1.getName()} is dead and can't fight. `);
+        return;
+    }
+    if (fighter2.getHealth() === 0) {
+        console.log(`${fighter2.getName()} is dead and can't fight. `);
+        return;
+    }
+
+
+    while (fighter1.getHealth() > 0 && fighter2.getHealth() > 0) {
+
+        fighter1.attack(fighter2);
+        fighter2.attack(fighter1);
+    }
+    if (!fighter1.getHealth()) {
+
+        fighter1.addLoss();
+        fighter2.addWin();
+        console.log(`${fighter2.getName()} has won !`);
+    }
+    if (!fighter2.getHealth()) {
+
+        fighter2.addLoss();
+        fighter1.addWin();
+        console.log(`${fighter1.getName()} has won !`);
+    }
+}
+
 
 const myFighter1 = new Fighter({ name: 'Maximus', damage: 20, hp: 100, strength: 20, agility: 15 });
 const myFighter2 = new Fighter({ name: 'Commodus', damage: 25, hp: 90, strength: 25, agility: 20 });
 
-
-myFighter1.attack(myFighter2);
-
+battle(myFighter1, myFighter2);
+battle(myFighter1, myFighter2);
