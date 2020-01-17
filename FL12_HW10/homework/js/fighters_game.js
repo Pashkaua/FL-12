@@ -60,12 +60,12 @@ function battle(fighter1, fighter2) {
         return;
     }
 
-
     while (fighter1.getHealth() > 0 && fighter2.getHealth() > 0) {
 
         fighter1.attack(fighter2);
         fighter2.attack(fighter1);
     }
+
     if (!fighter1.getHealth()) {
 
         fighter1.addLoss();
