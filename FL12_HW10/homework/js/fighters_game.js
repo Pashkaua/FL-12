@@ -60,10 +60,12 @@ function battle(fighter1, fighter2) {
         return;
     }
 
+    let toggle = false;
+
     while (fighter1.getHealth() > 0 && fighter2.getHealth() > 0) {
 
-        fighter1.attack(fighter2);
-        fighter2.attack(fighter1);
+        toggle ? myFighter2.attack(myFighter1) : myFighter1.attack(myFighter2);
+        toggle = !toggle;
     }
 
     if (!fighter1.getHealth()) {
