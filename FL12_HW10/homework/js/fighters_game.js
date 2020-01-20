@@ -64,7 +64,7 @@ function battle(fighter1, fighter2) {
 
     while (fighter1.getHealth() > 0 && fighter2.getHealth() > 0) {
 
-        toggle ? myFighter2.attack(myFighter1) : myFighter1.attack(myFighter2);
+        toggle ? fighter2.attack(fighter1) : fighter1.attack(fighter2);
         toggle = !toggle;
     }
 
@@ -81,10 +81,3 @@ function battle(fighter1, fighter2) {
         console.log(`${fighter1.getName()} has won !`);
     }
 }
-
-
-const myFighter1 = new Fighter({ name: 'Maximus', damage: 20, hp: 100, strength: 20, agility: 15 });
-const myFighter2 = new Fighter({ name: 'Commodus', damage: 25, hp: 90, strength: 25, agility: 20 });
-
-battle(myFighter1, myFighter2);
-battle(myFighter1, myFighter2);
