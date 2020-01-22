@@ -30,7 +30,15 @@ span {
     font-size: 16px;
 }
 
-.empty {
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+span.show {
     font-style: italic;
     margin-left: 15px;
 }

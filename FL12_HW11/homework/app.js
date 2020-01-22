@@ -78,8 +78,7 @@ function createTree(obj, parent) {
       const pEmpty = document.createElement('span');
       pEmpty.innerHTML = 'Folder is empty';
       li.appendChild(pEmpty);
-      pEmpty.style.display = 'none';
-      pEmpty.className = 'empty';
+      pEmpty.className = 'hidden';
     }
 
     parent.appendChild(ul);
@@ -89,12 +88,13 @@ function createTree(obj, parent) {
 function openClose() {
   const element = this.nextElementSibling;
 
-  if (element.style.display === 'block') {
-    element.style.display = 'none';
+  if (element.className === 'show') {
+
+    element.className = 'hidden';
     this.firstChild.innerText = 'folder';
 
   } else {
-    element.style.display = 'block';
+    element.className = 'show';
     this.firstChild.innerText = 'folder_open';
   }
 }
