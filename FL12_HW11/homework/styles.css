@@ -1,0 +1,36 @@
+/* Todo: your styles go here*/
+p+ul {
+    display: none;
+}
+
+ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+p:hover,
+.file:hover {
+    background-color: rgb(233, 232, 232);
+}
+
+.material-icons {
+    color: #f3ad21;
+    font-size: 18px;
+}
+
+span .material-icons {
+    color: rgb(192, 192, 192);
+}
+
+p,
+span {
+    display: flex;
+    align-items: center;
+    margin: 3px 0;
+    font-size: 16px;
+}
+
+.empty {
+    font-style: italic;
+    margin-left: 15px;
+}
