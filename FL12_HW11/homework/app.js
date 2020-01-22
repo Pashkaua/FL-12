@@ -40,10 +40,10 @@ const rootNode = document.getElementById('root');
 // Todo: your code goes here
 
 
-function createTree(structure, parent) {
+function createTree(obj, parent) {
   const ul = document.createElement('ul');
 
-  for (let i = 0; i < structure.length; i++) {
+  for (let i = 0; i < obj.length; i++) {
     const li = document.createElement('li');
     const p = document.createElement('p');
     const icon = document.createElement('i');
@@ -52,10 +52,10 @@ function createTree(structure, parent) {
 
     p.addEventListener('click', openClose);
 
-    if (structure[i].folder) {
+    if (obj[i].folder) {
       icon.innerHTML = 'folder';
       p.appendChild(icon);
-      p.innerHTML += structure[i].title;
+      p.innerHTML += obj[i].title;
       li.appendChild(p);
       ul.appendChild(li);
 
@@ -63,17 +63,17 @@ function createTree(structure, parent) {
       icon.innerHTML = 'insert_drive_file'
       span.appendChild(icon);
       span.className = 'file';
-      span.innerHTML += structure[i].title;
+      span.innerHTML += obj[i].title;
       li.appendChild(span);
       ul.appendChild(li);
 
     }
 
-    if (structure[i].children) {
+    if (obj[i].children) {
 
-      createTree(structure[i].children, li);
+      createTree(obj[i].children, li);
 
-    } else if (structure[i].folder && !structure[i].children) {
+    } else if (obj[i].folder && !obj[i].children) {
 
       const pEmpty = document.createElement('span');
       pEmpty.innerHTML = 'Folder is empty';
@@ -85,7 +85,6 @@ function createTree(structure, parent) {
     parent.appendChild(ul);
   }
 }
-
 
 function openClose() {
   const element = this.nextElementSibling;
