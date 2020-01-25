@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+header {
+    height: 20vh;
+    width: 100%;
+    background-color: rgb(66, 87, 178);
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    font-size: 3em;
+    padding-top: 30px;
+}
+
+.btn-new {
+    height: 40px;
+    width: 20%;
+    position: absolute;
+    top: 40px;
+    right: 4%;
+    background-color: rgb(61, 205, 214);
+    color: #fff;
+    font-size: 1.5em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-new:active,
+.btn-save:active,
+.btn-cancel:active {
+    background-color: rgb(59, 183, 192);
+    transform: translateY(2px);
+}
+
+.btn-hidden {
+    display: none;
+}
+
+.block-add-new {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.term,
+.definition {
+    width: 46%;
+    margin: 2%;
+    height: 30px;
+    border-bottom: 2px solid gray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+}
+
+.term::placeholder,
+.definition::placeholder {
+    color: lightgray;
+}
+
+.btn-save,
+.btn-cancel {
+    width: 22%;
+    height: 30px;
+    margin: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(61, 205, 214);
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+
+ul {
+    width: 80%;
+    margin: 50px auto;
+}
+
+li {
+    width: 100%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+p {
+    width: 50%;
+    height: 30px;
+    border-bottom: 2px solid gray;
+    padding-left: 15px;
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: none;
+    background-image: linear-gradient(transparent 11px, #d80202 12px, transparent 14px);
+}
