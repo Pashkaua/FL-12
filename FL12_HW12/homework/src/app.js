@@ -111,6 +111,8 @@ function pushToLocal() {
     const term = document.querySelector('.term').value;
     const def = document.querySelector('.definition').value;
 
+    const zero = 0;
+
     if (!term || !def) {
         alert('Plese enter new task')
     } else {
@@ -119,6 +121,18 @@ function pushToLocal() {
             'def': def,
             'check': false
         };
+
+        for (let i = 0; i < list.length; i++) {
+
+            if (list[i].check) {
+                list.splice(i, zero, newItem);
+
+                localStorage.setItem('list', JSON.stringify(list));
+                window.location.hash = '';
+
+                return;
+            }
+        }
 
         list.push(newItem);
         localStorage.setItem('list', JSON.stringify(list));
