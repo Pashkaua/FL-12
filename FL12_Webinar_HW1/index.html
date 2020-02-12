@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW_01_CSS Frameworks</title>
+
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet/less" href="./styles/styles.less" />
+</head>
+
+<body>
+    <div class="container-fluid p-0 header">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light header_navbar">
+            <div class="container header_container">
+                <img class="header_img" src="./img/logo.png" alt="logo">
+                <div class="collapse navbar-collapse header_collapse">
+                    <ul class="navbar-nav mr-auto ml-2 header_ul ">
+                        <li class="header_li"><a class="nav-link header_link" href="#">Classes</a></li>
+                        <li class="header_li"><a class="nav-link header_link" href="#">About us</a></li>
+                        <li class="header_li"><a class="nav-link header_link" href="#">Contacts</a></li>
+                    </ul>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport">
+                    <span class="navbar-toggler-icon"></span> </button>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <h1 class="mt-3">Yoga Pilates</h1>
+        <hr class="line">
+    </div>
+
+    <div class="container description">
+        <div class="row">
+            <div class="col-lg-8">
+                <img class="w-100 description_img" src="./img/yoga.jpg" alt="girls">
+            </div>
+            <div class="col-lg-4">
+                <h2 class="description_header">Class description</h2>
+                <p class="description_text">
+                    This workout uses a series of exercise routines designed to increase your core strength &
+                    improve
+                    your posture, energy, & flexibility. Pilates work is powered by breath, flow, & centering. By
+                    focusing on the mind-body connection & using more efficient form, this workout helps develop a
+                    stronger, leaner, healthier body. Appropriate for all fitness levels.
+                </p>
+                <ul class="ml-5" class="description_ul">
+                    <li> One Personal Trainer</li>
+                    <li> Big gym space for training</li>
+                    <li> Free tools & props</li>
+                    <li> Free locker</li>
+                    <li> Free before / after shower</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Related classes</h2>
+        <hr class="line">
+    </div>
+
+    <div class="container images">
+        <div class="card-deck  row images_deck ">
+            <div class="card col-6 col-md-3 p-1 images_card ">
+                <div class="images_block images_card--red">
+                    <img class="card-img-top images_img" src="./img/cardio-kickbox.jpg" alt="Card image cap">
+
+                    <div class="card-footer images_footer">
+                        <p class="images_text">Cardio kickboxing</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card col-6 col-md-3 p-1 images_card ">
+                <div class="images_card--blue">
+                    <img class="card-img-top images_img" src="./img/fitness.jpg" alt="Card image cap">
+
+                    <div class="card-footer images_footer">
+                        <p class="images_text">Fitness xpress</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" card col-6 col-md-3 p-1 images_card ">
+                <div class="images_card--orange">
+                    <img class="card-img-top images_img" src="./img/zumba.jpg" alt="Card image cap">
+
+                    <div class="card-footer images_footer">
+                        <p class="images_text">Zumba</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" card col-6 col-md-3 p-1 images_card ">
+                <div class="images_card--green">
+                    <img class="card-img-top images_img" src="./img/bootcamp.jpg" alt="Card image cap">
+
+                    <div class="card-footer images_footer">
+                        <p class="images_text">Bootcamp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" container footer-container">
+        <footer class="footer">
+            <p class="footer_text"> &copy; Epam Front-end lab, 2018</p>
+        </footer>
+    </div>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/less.min.js"></script>
+
+
+</body>
+
+</html>

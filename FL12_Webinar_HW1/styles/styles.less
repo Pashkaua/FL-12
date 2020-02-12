@@ -25,23 +25,32 @@ hr {
     border: 0;
 }
 
-.navbar {
+.header_navbar {
     padding: 0 1rem;
 
-    .container {
-        img {
+    .header_container {
+
+        .header_img {
             height: 20px;
             width: 20px;
         }
 
-        .collapse {
-            ul {
-                li {
-                    a {
+        .header_collapse {
+            .header_ul {
+                .header_li {
+                    .header_link {
                         padding: 10px;
                         height: 50px;
                         color: @var-grey;
                     }
+
+                    .header_link:hover {
+                        color: @var-white;
+                    }
+                }
+
+                .header_li:hover {
+                    background-color: @var-blue;
                 }
             }
         }
@@ -52,40 +61,36 @@ hr {
     }
 }
 
-.navbar li:hover {
-    background-color: @var-blue;
-}
-
 
 .description {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 30px;
 
-    .description-header {
+    .description_header {
         margin-top: 15px;
     }
 }
 
 
 .images {
-    .card-deck {
+    .images_deck {
         margin: 0;
 
-        .card {
+        .images_card {
             border-radius: 0;
             border: none;
             padding: 0;
             margin: 0;
 
-            img {
+            .images_img {
                 width: 100%;
             }
 
-            .card-footer {
+            .images_footer {
 
-                p {
-                    color: #fff;
+                .images_text {
+                    color: @var-white;
                     font-size: 0.7em;
                     white-space: nowrap;
                     text-align: center;
@@ -94,32 +99,32 @@ hr {
             }
         }
 
-        .red {
+        .images_card--red {
             .my-mixin(@var-red);
         }
 
-        .blue {
+        .images_card--blue {
             .my-mixin(@var-blue);
         }
 
-        .orange {
+        .images_card--orange {
             .my-mixin(@var-orange);
         }
 
-        .green {
+        .images_card--green {
             .my-mixin(@var-green);
         }
     }
 }
 
-.bottom {
-    footer {
+.footer-container {
+    .footer {
         background-color: darken(@var-grey, 10%);
         height: 40px;
         margin-top: 25px;
 
-        p {
-            color: #fff;
+        .footer_text {
+            color: @var-white;
             padding: 10px 15px;
             margin: 0;
             font-size: 0.8em;
