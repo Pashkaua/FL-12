@@ -114,4 +114,4 @@ const getNameAsync = async () => {
         throw new Error(response.status);
     }
 }
-getNameAsync();
+// getNameAsync();
