@@ -111,3 +111,11 @@ class SaleManager extends Manager {
         this.department = 'sales';
     }
 }
+
+// ----------------------Task_03------------------------
+
+
+
+function ManagerPro(manager, obj) {
+    Object.assign(manager, obj)
+}
