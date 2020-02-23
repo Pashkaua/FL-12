@@ -8,31 +8,31 @@ class Employee {
         this.salary = obj.salary;
         this.position = obj.position;
         this.department = obj.department;
-        this._getAge_ = () => {
+        this._getAge = () => {
             const dateNow = new Date();
             const emplBirthday = new Date(Date.parse(this.birthday));
             return dateNow.getYear() - emplBirthday.getYear();
         }
-        this._fullName_ = () => `${this.firstName} ${this.lastName}`;
-        Employee.registrEMPLOYEES(this);
+        this._fullName = () => `${this.firstName} ${this.lastName}`;
+        Employee.registr_EMPLOYEES(this);
     }
 
-    static EMPLOYEES = [];
-    static registrEMPLOYEES(empl) {
-        Employee.EMPLOYEES.push(empl);
+    static _EMPLOYEES = [];
+    static registr_EMPLOYEES(empl) {
+        Employee._EMPLOYEES.push(empl);
     }
 
-    get age() { return this._getAge_() };
-    get fullName() { return this._fullName_() };
-    get EMPLOYEES() {
-        return this.EMPLOYEES;
+    get age() { return this._getAge() };
+    get fullName() { return this._fullName() };
+    static get EMPLOYEES() {
+        return this._EMPLOYEES;
     }
 
     quit() {
-        if (Employee.EMPLOYEES.includes(this)) {
+        if (Employee._EMPLOYEES.includes(this)) {
 
-            let index = Employee.EMPLOYEES.indexOf(this)
-            Employee.EMPLOYEES.splice(index, 1)
+            let index = Employee._EMPLOYEES.indexOf(this)
+            Employee._EMPLOYEES.splice(index, 1)
         }
     }
 
@@ -88,8 +88,7 @@ class Manager extends Employee {
         this.position = 'manager';
     }
     get managedEmployees() {
-
-        return Employee.EMPLOYEES.filter(employee => employee.department === this.department && employee.position != 'manager');
+        return Employee._EMPLOYEES.filter(employee => employee.department === this.department && employee.position != 'manager');
     }
 }
 
@@ -112,8 +111,8 @@ class SaleManager extends Manager {
     }
 }
 
-// ----------------------Task_03------------------------
 
+// ----------------------Task_03------------------------
 
 
 function ManagerPro(manager, obj) {
