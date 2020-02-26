@@ -1,29 +1,20 @@
 
 // ---------------------Task_01--------------------------
 
-const array = [12, 56, 5, 41, -101, 6, 99, 6, 11, 6, 1, 0, -16, 1];
 
-const maxElement = (arr) => {
-    return Math.max(...arr)
-}
+const maxElement = (arr) => Math.max(...arr);
 
-// console.log(maxElement(array));
 
 
 // ---------------------Task_02--------------------------
 
-const array2 = [1, 2, 3];
 
-const copyArray = (arr) => {
-    return arr.slice();
-}
-const copiedArray = copyArray(array2);
+const copyArray = arr => arr.slice();
 
-// console.log(array2, copiedArray);
-// console.log(array2 === copiedArray);
 
 
 // ---------------------Task_03--------------------------
+
 
 const addUniiqueId = (obj) => {
     let res = obj;
@@ -32,9 +23,9 @@ const addUniiqueId = (obj) => {
     return res
 }
 
-// console.log(addUniiqueId({ name: 123 }));
 
 // ---------------------Task_04--------------------------
+
 
 const oldObj = { name: "Someone", details: { id: 1, age: 11, university: 'UNI' } }
 
@@ -49,29 +40,23 @@ const regroupObject = (oldObj) => {
     }
 }
 
-// console.log(regroupObject(oldObj));
-
 
 // ---------------------Task_05--------------------------
 
-const findUniqueElements = (arr) => {
-    return [...new Set(arr)]
-}
 
-// console.log(findUniqueElements(array));
+const findUniqueElements = arr => [...new Set(arr)];
+
 
 
 // ---------------------Task_06--------------------------
 
-const phoneNumber = (num) => {
-    return num.slice(-4).padStart(num.length, '*')
-}
-const tel = '18151515153213';
 
-// console.log(phoneNumber(tel));
+const phoneNumber = num => num.slice(-4).padStart(num.length, '*')
+
 
 
 // ---------------------Task_07--------------------------
+
 
 const required = () => {
     throw new Error('Missing property');
@@ -81,11 +66,9 @@ const add = (a = required(), b = required()) => {
     return a + b;
 }
 
-// console.log(add(1, 3));
-// console.log(add(1));
-
 
 // ---------------------Task_08--------------------------
+
 
 const getName = () => {
     const fetchPromise = fetch('https://jsonplaceholder.typicode.com/users');
@@ -98,10 +81,9 @@ const getName = () => {
         })
 }
 
-// getName();
-
 
 // ---------------------Task_09--------------------------
+
 
 const getNameAsync = async () => {
     let response = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -114,4 +96,3 @@ const getNameAsync = async () => {
         throw new Error(response.status);
     }
 }
-// getNameAsync();
