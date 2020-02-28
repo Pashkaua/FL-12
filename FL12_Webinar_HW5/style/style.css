@@ -27,6 +27,10 @@
     animation: spin 2s linear infinite;
 }
 
+.form-control {
+    cursor: pointer;
+}
+
 /* Safari */
 @-webkit-keyframes spin {
     0% {
