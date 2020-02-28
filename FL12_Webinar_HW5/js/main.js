@@ -137,11 +137,11 @@ function createItems(name, body) {
 
   return (
     `<a class="list-group-item list-group-item-action flex-column align-items-start my-2">
-      <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1 head">${name}</h5>
-      </div>
-      <p class="mb-1 text">${body}</p>
-      </a>`
+    <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1 head">${name}</h5>
+    </div>
+    <p class="mb-1 text">${body}</p>
+    </a>`
   )
 }
 
@@ -150,7 +150,7 @@ function getRandomDog(img) {
     .then(res => res.json())
     .then(data => {
       if (data.url.includes('.mp4')) {
-        getRandomDog();
+        getRandomDog(img);
       }
       else {
         img.src = data.url;
@@ -160,137 +160,137 @@ function getRandomDog(img) {
 
 function createEdit(user) {
   let form = `<form id='form'>
-    <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="name">Name</label>
-        <input type="text" class="form-control is-valid" id="name" placeholder="First name" value="${user.name}" required>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="username">Username</label>
-        <input type="text" class="form-control is-valid" id="username" placeholder="Last name" value="${user.username}" required>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="email">Email</label>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroupPrepend3">@</span>
-          </div>
-          <input type="text" class="form-control is-valid" id="email" placeholder="email" value="${user.email}" required> 
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="name">Name</label>
+      <input type="text" class="form-control is-valid" id="name" placeholder="First name" value="${user.name}" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="username">Username</label>
+      <input type="text" class="form-control is-valid" id="username" placeholder="Last name" value="${user.username}" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="email">Email</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend3">@</span>
         </div>
+        <input type="text" class="form-control is-valid" id="email" placeholder="email" value="${user.email}" required> 
       </div>
     </div>
-    <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="city">City</label>
-        <input type="text" class="form-control is-valid" id="city" placeholder="City" 
-        value="${user.address.city}"required>
-        <div class="invalid-feedback">
-          Please provide a valid city.
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="suite">Suite</label>
-        <input type="text" class="form-control is-valid" id="suite" placeholder="Suite" 
-        value="${user.address.suite}"required>
-        <div class="invalid-feedback">
-          Please provide a valid city.
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="street">Street</label>
-        <input type="text" class="form-control is-valid" id="street" placeholder="Street"
-        value="${user.address.street}" required>
-        <div class="invalid-feedback">
-          Please provide a valid state.
-        </div>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="zip">Zipcode</label>
-        <input type="text" class="form-control is-valid" id="zip" placeholder="Zipcode" 
-        value="${user.address.zipcode}"required>
-        <div class="invalid-feedback">
-          Please provide a valid city.
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="lat">Geo lat</label>
-        <input type="text" class="form-control is-valid" id="lat" placeholder="Geo lat" 
-        value="${user.address.geo.lat}"required>
-        <div class="invalid-feedback">
-          Please provide a valid city.
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="lng">Geo lng</label>
-        <input type="text" class="form-control is-valid" id="lng" placeholder="Geo lng"
-        value="${user.address.geo.lng}" required>
-        <div class="invalid-feedback">
-          Please provide a valid state.
-        </div>
-      </div>
-    </div>
-    <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="phone">Phone</label>
-      <input type="text" class="form-control is-valid" id="phone" placeholder="phone" 
-      value="${user.phone}"required>
+  </div>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="city">City</label>
+      <input type="text" class="form-control is-valid" id="city" placeholder="City" 
+      value="${user.address.city}"required>
       <div class="invalid-feedback">
         Please provide a valid city.
       </div>
     </div>
-    <div class="col-md-6 mb-3">
-      <label for="website">Website</label>
-      <input type="text" class="form-control is-valid" id="website" placeholder="Website"
-      value="${user.website}" required>
+    <div class="col-md-4 mb-3">
+      <label for="suite">Suite</label>
+      <input type="text" class="form-control is-valid" id="suite" placeholder="Suite" 
+      value="${user.address.suite}"required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="street">Street</label>
+      <input type="text" class="form-control is-valid" id="street" placeholder="Street"
+      value="${user.address.street}" required>
       <div class="invalid-feedback">
         Please provide a valid state.
       </div>
     </div>
   </div>
   <div class="form-row">
-      <div class="col-md-4 mb-3">
-          <label for="companyName">Company name</label>
-          <input type="text" class="form-control is-valid" id="companyName" placeholder="Company name" 
-          value="${user.company.name}"required>
-          <div class="invalid-feedback">
-              Please provide a valid city.
-          </div>
-      </div>
-      <div class="col-md-4 mb-3">
-          <label for="catchPhrase">Catch Phraset</label>
-          <input type="text" class="form-control is-valid" id="catchPhrase" placeholder="Catch Phrase" 
-          value="${user.company.catchPhrase}"required>
-          <div class="invalid-feedback">
-              Please provide a valid city.
-          </div>
-      </div>
-  <div class="col-md-4 mb-3">
-          <label for="bs">BS</label>
-          <input type="text" class="form-control is-valid" id="bs" placeholder="BS"
-          value="${user.company.bs}" required>
-          <div class="invalid-feedback">
-              Please provide a valid state.
-          </div>
-      </div>
-  </div>
-  </div>
-  
-  
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input is-valid" type="checkbox" value="" id="invalidCheck3" required>
-        <label class="form-check-label" for="invalidCheck3">
-          Agree to terms and conditions
-        </label>
-        <div class="invalid-feedback">
-          You must agree before submitting.
-        </div>
+    <div class="col-md-4 mb-3">
+      <label for="zip">Zipcode</label>
+      <input type="text" class="form-control is-valid" id="zip" placeholder="Zipcode" 
+      value="${user.address.zipcode}"required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
       </div>
     </div>
-    <button class="btn btn-primary" type="submit">Submit form</button>
-  </form>`
+    <div class="col-md-4 mb-3">
+      <label for="lat">Geo lat</label>
+      <input type="text" class="form-control is-valid" id="lat" placeholder="Geo lat" 
+      value="${user.address.geo.lat}"required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="lng">Geo lng</label>
+      <input type="text" class="form-control is-valid" id="lng" placeholder="Geo lng"
+      value="${user.address.geo.lng}" required>
+      <div class="invalid-feedback">
+        Please provide a valid state.
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="col-md-6 mb-3">
+    <label for="phone">Phone</label>
+    <input type="text" class="form-control is-valid" id="phone" placeholder="phone" 
+    value="${user.phone}"required>
+    <div class="invalid-feedback">
+      Please provide a valid city.
+    </div>
+  </div>
+  <div class="col-md-6 mb-3">
+    <label for="website">Website</label>
+    <input type="text" class="form-control is-valid" id="website" placeholder="Website"
+    value="${user.website}" required>
+    <div class="invalid-feedback">
+      Please provide a valid state.
+    </div>
+  </div>
+</div>
+<div class="form-row">
+    <div class="col-md-4 mb-3">
+        <label for="companyName">Company name</label>
+        <input type="text" class="form-control is-valid" id="companyName" placeholder="Company name" 
+        value="${user.company.name}"required>
+        <div class="invalid-feedback">
+            Please provide a valid city.
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <label for="catchPhrase">Catch Phraset</label>
+        <input type="text" class="form-control is-valid" id="catchPhrase" placeholder="Catch Phrase" 
+        value="${user.company.catchPhrase}"required>
+        <div class="invalid-feedback">
+            Please provide a valid city.
+        </div>
+    </div>
+<div class="col-md-4 mb-3">
+        <label for="bs">BS</label>
+        <input type="text" class="form-control is-valid" id="bs" placeholder="BS"
+        value="${user.company.bs}" required>
+        <div class="invalid-feedback">
+            Please provide a valid state.
+        </div>
+    </div>
+</div>
+</div>
+
+
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input is-valid" type="checkbox" value="" id="invalidCheck3" required>
+      <label class="form-check-label" for="invalidCheck3">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>`
 
   block.innerHTML = form;
   const editForm = document.getElementById('form');
