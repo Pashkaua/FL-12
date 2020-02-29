@@ -1,6 +1,6 @@
 .mbox {
   max-width: 900px;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 .list {
@@ -32,4 +32,8 @@
   right: 0;
   top: 0;
   height: 21px;
+}
+
+form {
+  margin: 10px;
 }
