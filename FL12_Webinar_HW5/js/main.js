@@ -95,40 +95,33 @@ function getContent(id) {
   const listPosts = document.createElement('div');
   listPosts.class = "list-group";
 
-  const listPostsHeader = document.createElement('h3');
-  listPostsHeader.className = 'my-4 text-primary';
-  listPostsHeader.innerHTML = 'User posts:'
-  listPosts.appendChild(listPostsHeader);
-
-  const listComents = document.createElement('div');
-  listComents.class = "list-group";
-
-  const listComentsHeader = document.createElement('h3');
-  listComentsHeader.className = 'my-4 text-primary';
-  listComentsHeader.innerHTML = 'User cometnts:'
-  listComents.appendChild(listComentsHeader);
-
   fetch(`https://jsonplaceholder.typicode.com/posts?userId=${id}`)
     .then(response => response.json())
     .then(json => {
       json.forEach((el) => {
-        listPosts.innerHTML += createItems(el.title, el.body);
+        const listBlock = document.createElement('div');
+        const element = createItems(el.title, el.body);
+
+        listBlock.className = 'list-block';
+        listBlock.innerHTML += `<h3 class="my-4 text-primary">post:</h3>
+        ${element}
+        <h3 class="my-4 text-primary">comments:</h3>`
+
+        fetch(`https://jsonplaceholder.typicode.com/comments?postId=${el.id}`)
+          .then(response => response.json())
+          .then(json => {
+            json.forEach((el) => {
+              listBlock.innerHTML += createItems(el.name, el.body);
+            })
+          }).catch(error => {
+            throw (error);
+          })
+        listPosts.appendChild(listBlock);
       })
     }).catch(error => {
       throw (error);
     })
   block.appendChild(listPosts);
-
-  fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
-    .then(response => response.json())
-    .then(json => {
-      json.forEach((el) => {
-        listComents.innerHTML += createItems(el.name, el.body);
-      })
-    }).catch(error => {
-      throw (error);
-    })
-  block.appendChild(listComents);
 }
 
 
@@ -332,7 +325,6 @@ function saveChanges(userId) {
     }
   })
     .then(response => response.json())
-    // .then(json => console.log(json))
     .then(() => window.location.href = window.location.href.replace(/#.*$/, ''))
     .catch(error => console.log(error));
 }
