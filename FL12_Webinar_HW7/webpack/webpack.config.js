@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const PrettierPlugin = require('prettier-webpack-plugin');
 
 const PATHS = {
     source: path.join(__dirname, '../src/js'),
@@ -21,6 +22,7 @@ module.exports = {
         new CopyPlugin([
             { from: path.resolve(__dirname, '../src/img'), to: 'img' }
         ]),
+        new PrettierPlugin()
     ],
     module: {
         rules: [
@@ -32,11 +34,19 @@ module.exports = {
                     // Translates CSS into CommonJS
                     'css-loader',
                     // Compiles Sass to CSS
-                    'sass-loader',
-                ],
-            },
-        ],
-    },
+                    'sass-loader'
+                ]
+            }, {
+                test: /\.(js)$/,
+                include: path.resolve(__dirname, '../src'),
+                enforce: 'pre',
+                loader: 'eslint-loader',
+                options: {
+                    emitWarning: true
+                }
+            }
+        ]
+    }
 
 };
 
