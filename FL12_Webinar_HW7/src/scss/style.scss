@@ -1,3 +1,5 @@
+@import "_variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -11,25 +13,25 @@ section {
 }
 
 .score {
-  color: rgb(224, 224, 224);
+  color: $grey;
   height: 20vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  h2 {
+    font-size: 30px;
+  }
 }
 
-.score h2 {
-  font-size: 30px;
-}
-
-.score p {
+.score .score p {
   text-align: center;
   padding: 10px;
   font-size: 25px;
 }
 
 .intro {
-  color: rgb(224, 224, 224);
+  color: $grey;
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -38,7 +40,7 @@ section {
   transition: opacity 0.5s ease;
 }
 
-.intro h1 {
+h1 {
   font-size: 50px;
 }
 
@@ -50,7 +52,7 @@ section {
   height: 50px;
   background: none;
   border: none;
-  color: rgb(224, 224, 224);
+  color: $grey;
   font-size: 20px;
   background: rgb(45, 117, 96);
   border-radius: 3px;
@@ -67,7 +69,7 @@ section {
 }
 
 .winner {
-  color: rgb(224, 224, 224);
+  color: $grey;
   text-align: center;
   font-size: 50px;
   margin-bottom: 20px;
