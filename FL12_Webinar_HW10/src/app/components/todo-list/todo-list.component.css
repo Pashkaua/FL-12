@@ -1,0 +1,71 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-input {
+  height: 40px;
+  width: 78%;
+  border-radius: 15px;
+  border: none;
+  font-size: 16px;
+  padding: 0 20px;
+}
+
+.btn-add {
+  height: 40px;
+  font-size: 18px;
+  width: 20%;
+  border-radius: 15px;
+  border: none;
+  background-color: rgb(37, 176, 194);
+  outline: none;
+}
+
+.add-container {
+  margin-top: 40px;
+  height: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(231, 231, 231);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.form-groups {
+  width: 100%;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.add-input {
+  width: 25%;
+  height: 40px;
+  padding: 10px;
+}
+
+.disable {
+  display: none;
+}
+
+.save-item,
+.diskard-item {
+  width: 11%;
+  height: 40px;
+  border: 1px solid rgb(51, 51, 51);
+  border-radius: 15px;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(231, 231, 231);
+  outline: none;
+}
+
+.red-border {
+  border: 1px solid red;
+}

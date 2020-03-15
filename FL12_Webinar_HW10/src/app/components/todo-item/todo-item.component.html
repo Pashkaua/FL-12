@@ -1,0 +1,27 @@
+<div class="todo-list">
+    <div class="todo-item">
+        <div *ngIf="!todo.editing; else editingTodo" class="todo-item-label"
+            [ngClass]="{ 'completed' : todo.completed }">
+            <p>
+                {{todo.name}}
+            </p>
+            <p>
+                {{todo.email}}
+            </p>
+            <p>
+                {{todo.phone}}
+            </p>
+            <button class="remove-item" (click)="deleteTodo(todo)">delete </button>
+            <button class="edit-item" (click)="editTodo(todo)">edit</button>
+
+        </div>
+        <ng-template #editingTodo>
+            <input type="text" class="todo-item-edit" [(ngModel)]="todo.name" autofocus>
+            <input type="email" class="todo-item-edit" [(ngModel)]="todo.email" autofocus>
+            <input type="text" class="todo-item-edit" [(ngModel)]="todo.phone" autofocus>
+            <button class="save-item" (click)="doneEdit(todo)">save</button>
+            <button class="diskard-item" (click)="cancelEdit(todo)">discard</button>
+
+        </ng-template>
+    </div>
+</div>

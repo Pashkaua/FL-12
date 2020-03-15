@@ -1,0 +1,48 @@
+.todo-list {
+  margin-top: 40px;
+  height: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(231, 231, 231);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.todo-item {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+}
+
+.todo-item-label {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  width: 25%;
+}
+
+.edit-item,
+.remove-item,
+.save-item,
+.diskard-item {
+  width: 11%;
+  height: 40px;
+  border: 1px solid rgb(51, 51, 51);
+  border-radius: 15px;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(231, 231, 231);
+  outline: none;
+}
+
+.todo-item-edit {
+  height: 40px;
+  padding: 10px;
+}

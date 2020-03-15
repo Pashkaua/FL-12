@@ -1,0 +1,23 @@
+<div class="header">
+  <input type="text" class="search-input" placeholder="Search" [(ngModel)]="searchValue">
+  <button class="btn-add" (click)="showAdd()">Add New User</button>
+</div>
+
+<div class="add-container disable">
+  <div class="form-groups" [formGroup]="addForm">
+    <form>
+      <input type="text" class="add-input" placeholder="Name" required minlength="1" [(ngModel)]="todoName"
+        [ngModelOptions]="{standalone: true}">
+      <input type="email" class="add-input" placeholder="Email" required minlength="1" [(ngModel)]="todoEmail"
+        [ngModelOptions]="{standalone: true}">
+      <input type="text" class="add-input" placeholder="Phone" required minlength="1" [(ngModel)]="todoPhone"
+        [ngModelOptions]="{standalone: true}">
+      <button class="save-item" (click)="addTodo()" ng-disabled="addForm.form.invalid">save</button>
+      <button class="diskard-item" (click)="cancel()">discard</button>
+    </form>
+  </div>
+</div>
+
+<todo-item *ngFor="let todo of todosFiltered()" [todo]="todo" (checkedItem)="doneEdit($event)"
+  (doubleClickedItem)="editTodo($event)" (blurredItem)="doneEdit($event)" (enteredItem)="doneEdit($event)"
+  (cancelledItem)="cancelEdit($event)" (deletedItem)="deleteTodo($event)"></todo-item>
