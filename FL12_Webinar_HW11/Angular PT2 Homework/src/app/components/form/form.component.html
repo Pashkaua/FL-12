@@ -1,0 +1,36 @@
+<form [formGroup]="profileForm" *ngIf="user" (ngSubmit)="onSubmit()">
+
+  <div class="string" routerLink="/">
+    ←
+  </div>
+
+  <label>
+    <p> Name <span>*</span></p>
+    <input type="text" required formControlName="name" [(ngModel)]="user.name">
+  </label>
+
+  <label>
+    <p> Email <span>*</span></p>
+    <input type=" email" required formControlName="email" [(ngModel)]="user.email">
+  </label>
+
+  <label>
+    <p> Phone <span>*</span></p>
+    <input type="tel" required formControlName="phone" [(ngModel)]="user.phone">
+  </label>
+
+  <label>
+    <p> Address</p>
+    <input type="text" formControlName="address" [(ngModel)]="user.address.street">
+  </label>
+
+  <label>
+    <p> Website</p>
+    <input type="text" formControlName="website" [(ngModel)]="user.website">
+  </label>
+
+  <div>
+    <button type="submit" [disabled]="!profileForm.valid">Save</button>
+    <button type="button" (click)="cleanInput()">Discard</button>
+  </div>
+</form>

@@ -1,0 +1,19 @@
+<div class="todo-list">
+    <div class="todo-item">
+        <div class="todo-item-label">
+            <p>
+                {{user.name}}
+            </p>
+            <p>
+                {{user.email}}
+            </p>
+            <p>
+                {{user.phone}}
+            </p>
+
+            <button class="remove-item" (click)="deleteUser(user)">delete </button>
+            <button class="edit-item" [routerLink]="['/edit', user.id]">Edit</button>
+
+        </div>
+    </div>
+</div>

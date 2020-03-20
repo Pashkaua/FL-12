@@ -1,0 +1,8 @@
+<div class="header">
+  <input type="text" class="search-input" placeholder="Search" (change)=" usersFiltered()" [(ngModel)]="searchValue">
+  <button class="btn-add" routerLink="/new">Add New User</button>
+</div>
+<div class="list">
+  <user-item *ngFor="let user of usersFiltered()" [user]="user" (deletedItem)=" deleteUser($event)">
+  </user-item>
+</div>
