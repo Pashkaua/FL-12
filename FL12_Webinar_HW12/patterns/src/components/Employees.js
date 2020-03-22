@@ -7,7 +7,7 @@ export default class Employees extends Component {
     const employee = (item, index) => {
       return (
         <li key={index}>
-          {item.performance === filter || !filter ? (
+          {item.rm_id && (item.performance === filter || !filter) ? (
             <div className="block-item">
               <p>{item.name}</p>
               <p> Performance: {item.performance}</p>
