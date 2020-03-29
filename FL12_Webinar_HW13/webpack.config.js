@@ -30,7 +30,7 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: "./src/public",
+    contentBase: "./src",
     port: 7700
   }
 };
